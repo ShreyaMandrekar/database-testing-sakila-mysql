@@ -1084,11 +1084,46 @@ ROLLBACK;
 
 **Actual Result:**
 
+A controlled customer record was successfully inserted into the `customer` table.
+
+The inserted record returned the following values:
+
+| Field | Result |
+|---|---|
+| `customer_id` | 601 |
+| `first_name` | DBTEST |
+| `last_name` | CRUDTEST |
+| `email` | dbtest_crud@example.com |
+| `address_id` | 1 |
+| `active` | 1 |
+
+The inserted record was successfully retrieved using a SELECT query.
+
+The record was then updated successfully. The updated record returned the following values:
+
+| Field | Result |
+|---|---|
+| `customer_id` | 601 |
+| `first_name` | DBTEST_UPDATED |
+| `last_name` | CRUDUPDATED |
+| `email` | dbtest_crud@example.com |
+
+An invalid `store_id` value of `9999` was then tested. The INSERT operation was rejected by MySQL with an out-of-range value error for the `store_id` column.
+
+The valid controlled customer record was subsequently deleted successfully. A final verification query confirmed that the test record was no longer present.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+Controlled customer INSERT, SELECT, UPDATE, and DELETE operations were successfully executed. The inserted record was retrieved and updated as expected, and the test record was successfully removed during cleanup.
+
+An invalid `store_id` value of `9999` was rejected by MySQL because it was outside the valid range of the column. This result demonstrates data-type/range validation; it is not documented as a foreign-key constraint violation because MySQL returned an out-of-range value error before a foreign-key violation could be established.
+
+The final verification confirmed that the controlled test record was no longer present.
 
 ---
 
