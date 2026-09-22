@@ -67,11 +67,23 @@ No unexpected object type should be present.
 
 **Actual Result:**
 
+The SQL query returned the following database object types:
+
+| TABLE_TYPE | object_count |
+|---|---:|
+| BASE TABLE | 16 |
+| VIEW | 7 |
+
+The Sakila database contains 16 base tables and 7 views, for a total of 23 database objects.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The observed database object types and counts matched the expected result. No unexpected database object type was identified.
 
 ---
 
