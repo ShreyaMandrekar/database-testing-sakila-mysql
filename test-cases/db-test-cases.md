@@ -195,11 +195,22 @@ FROM customer;
 
 **Actual Result:**
 
+The query returned the following result:
+
+| total_rows | distinct_customer_ids | null_customer_ids |
+|---:|---:|---:|
+| 599 | 599 | 0 |
+
+The total number of customer records matched the number of distinct `customer_id` values, and no NULL `customer_id` values were found.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The `customer_id` primary key contains unique and non-NULL values across all 599 customer records. No primary key integrity issue was identified.
 
 ---
 
