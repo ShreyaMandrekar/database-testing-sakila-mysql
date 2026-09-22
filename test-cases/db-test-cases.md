@@ -248,11 +248,22 @@ No mandatory customer field should contain NULL.
 
 **Actual Result:**
 
+The SQL query returned the following result:
+
+| invalid_null_records |
+|---:|
+| 0 |
+
+No NULL values were found in the mandatory `customer` fields: `customer_id`, `store_id`, `first_name`, `last_name`, `address_id`, `active`, and `create_date`.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+All mandatory customer fields contained non-NULL values across the existing customer records. No mandatory-field NULL integrity issue was identified.
 
 ---
 
