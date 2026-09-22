@@ -774,11 +774,23 @@ The two methods should produce the same number of payment records.
 
 **Actual Result:**
 
+The SQL query returned the following results:
+
+| Check | Result |
+|---|---:|
+| `payment_count` | 16,044 |
+| `sum_one_count` | 16,044 |
+
+Both `COUNT(*)` and `SUM(1)` returned the same total of 16,044 payment records.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The payment record count was consistent between `COUNT(*)` and `SUM(1)`. No count consistency issue was identified.
 
 ---
 
