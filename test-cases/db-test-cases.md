@@ -135,11 +135,30 @@ The column definitions should match the observed Sakila schema.
 
 **Actual Result:**
 
+The query returned 9 rows for the `customer` table with the following column definitions:
+
+| Column | Data Type | Nullable | Column Key | Default | Extra |
+|---|---|---|---|---|---|
+| `customer_id` | smallint | NO | PRI | NULL | auto_increment |
+| `store_id` | tinyint | NO | MUL | NULL | |
+| `first_name` | varchar | NO | | NULL | |
+| `last_name` | varchar | NO | MUL | NULL | |
+| `email` | varchar | YES | | NULL | |
+| `address_id` | smallint | NO | MUL | NULL | |
+| `active` | tinyint | NO | | 1 | |
+| `create_date` | datetime | NO | | NULL | |
+| `last_update` | timestamp | YES | | CURRENT_TIMESTAMP | DEFAULT_GENERATED on update CURRENT_TIMESTAMP |
+
+The observed column definitions, nullable settings, primary key, indexes, default value, and auto-update timestamp behavior matched the expected customer table schema.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The `customer` table returned all 9 expected columns with the expected data types and constraint-related metadata. `customer_id` was identified as the primary key with auto-increment, `active` had a default value of 1, and `last_update` had the expected current timestamp and on-update behavior.
 
 ---
 
