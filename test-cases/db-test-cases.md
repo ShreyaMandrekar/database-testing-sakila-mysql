@@ -308,11 +308,24 @@ Every customer should reference an existing address and store.
 
 **Actual Result:**
 
+The SQL queries returned the following results:
+
+| Check | Result |
+|---|---:|
+| `orphan_customer_addresses` | 0 |
+| `orphan_customer_stores` | 0 |
+
+No customer records were found with an invalid `address_id` reference, and no customer records were found with an invalid `store_id` reference.
+
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+All customer `address_id` values correspond to existing records in the `address` table, and all customer `store_id` values correspond to existing records in the `store` table. No orphan customer foreign-key references were identified.
 
 ---
 
