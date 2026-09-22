@@ -1203,11 +1203,41 @@ ROLLBACK;
 
 **Actual Result:**
 
+
+A controlled customer record was successfully inserted into the `customer` table.
+
+The initial timestamp values were:
+
+| Field | Result |
+|---|---|
+| `customer_id` | 602 |
+| `first_name` | DBTEST |
+| `last_name` | TIMESTAMPTEST |
+| `create_date` | 2026-09-23 00:03:32 |
+| `last_update` | 2026-09-23 00:03:32 |
+
+The record was then updated successfully. After the update, the timestamp values were:
+
+| Field | Result |
+|---|---|
+| `customer_id` | 602 |
+| `first_name` | DBTEST_TIMESTAMP_UPDATED |
+| `last_name` | TIMESTAMPTEST |
+| `create_date` | 2026-09-23 00:03:32 |
+| `last_update` | 2026-09-23 00:07:44 |
+
+The `create_date` value remained unchanged after the update, while the `last_update` value changed from `2026-09-23 00:03:32` to `2026-09-23 00:07:44`.
+
+The controlled test record was subsequently deleted successfully. The DELETE operation affected 1 row. A final verification query returned no matching record, confirming that the test data was successfully cleaned up.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The customer timestamp behavior was successfully validated. The `create_date` value was populated during insertion and remained unchanged after the record was updated. The `last_update` value was automatically updated when the record was modified. The controlled test record was successfully deleted after execution, and no temporary test data remained.
 
 ---
 
