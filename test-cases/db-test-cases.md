@@ -723,11 +723,25 @@ If the database has been intentionally modified before execution, the actual bas
 
 **Actual Result:**
 
+The SQL queries returned the following record counts:
+
+| Table | Expected Count | Actual Count |
+|---|---:|---:|
+| `customer` | 599 | 599 |
+| `film` | 1,000 | 1,000 |
+| `rental` | 16,044 | 16,044 |
+| `payment` | 16,044 | 16,044 |
+
+All actual record counts matched the baseline counts recorded during database exploration.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The baseline record counts for the selected `customer`, `film`, `rental`, and `payment` tables matched the expected values. No unexpected record-count difference was identified.
 
 ---
 
