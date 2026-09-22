@@ -580,11 +580,31 @@ The film title should correspond to the referenced film record.
 
 **Actual Result:**
 
+The SQL JOIN query executed successfully and returned 1,000 rows.
+
+The result included the following related information:
+
+| Information | Result |
+|---|---|
+| Customer ID | Returned |
+| First Name | Returned |
+| Last Name | Returned |
+| Rental ID | Returned |
+| Rental Date | Returned |
+| Inventory ID | Returned |
+| Film ID | Returned |
+| Film Title | Returned |
+
+No NULL values were observed in the displayed relationship fields.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The customer-to-rental-to-inventory-to-film relationship was successfully validated using INNER JOINs. The query returned related customer, rental, inventory, and film information without any missing relationship data observed in the displayed results.
 
 ---
 
