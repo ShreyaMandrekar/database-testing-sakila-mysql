@@ -17,14 +17,14 @@
 
 ## 2. Test Case Execution Fields
 
-The following fields are intentionally left blank before execution:
+The following fields are recorded for each test case after execution:
 
 * Actual Result
 * Status
 * Defect ID
 * Comments
 
-These fields will be updated only after the corresponding SQL queries are actually executed.
+These fields contain the actual observations and execution results obtained from SQL queries executed against the local Sakila database.
 
 ---
 
@@ -1266,15 +1266,16 @@ The customer timestamp behavior was successfully validated. The `create_date` va
 
 # 13. Execution Notes
 
-* Test cases will be executed using MySQL Workbench against the local Sakila database.
-* Actual results will be recorded only after query execution.
-* A test case will be marked **PASS** when the observed result matches the expected result.
-* A test case will be marked **FAIL** only when an actual mismatch is observed and confirmed.
-* A defect ID will be assigned only for a genuine, reproducible failure.
-* Controlled INSERT, UPDATE, and DELETE operations will be executed inside transactions and rolled back after verification where applicable.
-* Existing Sakila sample data should not be intentionally left modified by the test execution.
-* Differences in baseline record counts should be investigated before being classified as defects because the database may have been modified after the initial exploration.
-* No test result should be fabricated or assumed before execution.
+* Test cases were executed using MySQL Workbench against the local Sakila database.
+* Actual results were recorded only after the corresponding SQL queries were executed.
+* A test case was marked **PASS** when the observed result matched the expected result.
+* A test case was marked **FAIL** only when an actual mismatch was observed and confirmed.
+* A defect ID was assigned only for a genuine, reproducible failure.
+* Controlled INSERT, UPDATE, and DELETE operations were performed only where required for test execution.
+* Temporary test records created during controlled database operations were explicitly deleted after verification.
+* Existing Sakila sample data was not intentionally left modified by the test execution.
+* Differences in baseline record counts were compared with the baseline captured during database exploration before being considered for defect classification.
+* No test result was fabricated or assumed before execution.
 
 ---
 
