@@ -853,11 +853,26 @@ FROM payment;
 
 **Actual Result:**
 
+The SQL aggregate query returned the following results:
+
+| Aggregate | Result |
+|---|---:|
+| `payment_count` | 16,044 |
+| `total_payment_amount` | 67,406.56 |
+| `average_payment_amount` | 4.201356 |
+| `minimum_payment_amount` | 0.00 |
+| `maximum_payment_amount` | 11.99 |
+
+The `COUNT()`, `SUM()`, `AVG()`, `MIN()`, and `MAX()` functions returned valid aggregate results for the `payment.amount` column.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+Payment aggregate calculations were successfully executed using `COUNT()`, `SUM()`, `AVG()`, `MIN()`, and `MAX()`. The database returned valid results without any SQL execution error or unexpected aggregate behavior.
 
 ---
 
