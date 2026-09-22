@@ -501,11 +501,33 @@ No broken relationship should result in missing joined records.
 
 **Actual Result:**
 
+The SQL JOIN query executed successfully and returned 599 rows.
+
+The result included the following related information for the customer records:
+
+| Information | Result |
+|---|---|
+| Customer ID | Returned |
+| First Name | Returned |
+| Last Name | Returned |
+| Address ID | Returned |
+| Address | Returned |
+| City ID | Returned |
+| City | Returned |
+| Country ID | Returned |
+| Country | Returned |
+
+The returned 599 rows contained customer, address, city, and country data, with no NULL values observed in the displayed relationship fields.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The customer-to-address-to-city-to-country relationship was successfully validated using INNER JOINs. All 599 customer records returned corresponding address, city, and country information, and no missing relationship data was observed in the result set.
+
 
 ---
 
