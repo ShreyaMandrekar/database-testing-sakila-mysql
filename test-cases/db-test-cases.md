@@ -369,11 +369,24 @@ Every rental should reference an existing customer, inventory item, and staff me
 
 **Actual Result:**
 
+The SQL queries returned the following results:
+
+| Check | Result |
+|---|---:|
+| `orphan_rental_customers` | 0 |
+| `orphan_rental_inventory` | 0 |
+| `orphan_rental_staff` | 0 |
+
+No rental records were found with invalid references to the `customer`, `inventory`, or `staff` tables.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+All rental `customer_id`, `inventory_id`, and `staff_id` values correspond to existing records in their respective parent tables. No orphan rental foreign-key references were identified.
 
 ---
 
