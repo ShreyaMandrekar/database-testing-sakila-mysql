@@ -649,11 +649,31 @@ The `payment.rental_id` should match the related `rental.rental_id`.
 
 **Actual Result:**
 
+The SQL JOIN query executed successfully and returned 1,000 rows.
+
+The result included the following related information:
+
+| Information | Result |
+|---|---|
+| Customer ID | Returned |
+| First Name | Returned |
+| Last Name | Returned |
+| Rental ID | Returned |
+| Rental Date | Returned |
+| Payment ID | Returned |
+| Amount | Returned |
+| Payment Date | Returned |
+
+No NULL values were observed in the displayed relationship fields.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The customer-to-rental-to-payment relationship was successfully validated using INNER JOINs. The query returned related customer, rental, and payment information, with no missing relationship data observed in the displayed results.
 
 ---
 
