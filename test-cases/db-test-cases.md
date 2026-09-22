@@ -943,11 +943,30 @@ ROLLBACK;
 
 **Actual Result:**
 
+A controlled customer record was inserted without explicitly specifying the `active` field.
+
+The inserted record returned the following values:
+
+| Field | Result |
+|---|---|
+| `customer_id` | 600 |
+| `first_name` | DBTEST |
+| `last_name` | DEFAULTVALUE |
+| `email` | dbtest_default@example.com |
+| `active` | 1 |
+
+The `active` field was automatically populated with the value `1`, confirming that the configured default value was applied.
+
+The temporary test record was subsequently removed using the test email address. A final verification query returned 0 rows, confirming that the test data was successfully cleaned up.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+The `customer.active` default value was successfully validated. When the `active` field was omitted during insertion, the database automatically assigned a value of `1`. The controlled test record was cleaned up after execution, and no temporary test data remained.
 
 ---
 
