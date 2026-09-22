@@ -430,11 +430,24 @@ Every payment should reference an existing customer, rental, and staff member.
 
 **Actual Result:**
 
+The SQL queries returned the following results:
+
+| Check | Result |
+|---|---:|
+| `orphan_payment_customers` | 0 |
+| `orphan_payment_rentals` | 0 |
+| `orphan_payment_staff` | 0 |
+
+No payment records were found with invalid references to the `customer`, `rental`, or `staff` tables.
+
 **Status:**
+PASS
 
 **Defect ID:**
+N/A
 
 **Comments:**
+All payment `customer_id`, `rental_id`, and `staff_id` values correspond to existing records in their respective parent tables. No orphan payment foreign-key references were identified.
 
 ---
 
